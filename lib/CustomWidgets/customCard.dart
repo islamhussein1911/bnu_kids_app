@@ -14,6 +14,7 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Colors.white,
       elevation: 3,
       borderRadius: BorderRadius.circular(20),
       child: InkWell(
@@ -25,7 +26,7 @@ class CustomCard extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: 160,
+                  height: 200,
                   width: 140,
                   child: Image.asset(avatarPath),
                 ),
