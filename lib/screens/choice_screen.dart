@@ -9,60 +9,79 @@ class ChoiceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(top: 30, left: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Bnulogo(),
-            SizedBox(height: 30),
-            Text(
-              "WHO",
-              style: TextStyle(
-                fontSize: 30,
-                color: Color(0xFF00adcf),
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              "ARE",
-              style: TextStyle(
-                fontSize: 30,
-                color: Color(0xFF00adcf),
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              "YOU?",
-              style: TextStyle(
-                fontSize: 30,
-                color: Color(0xFF00adcf),
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 30),
-            CustomCard(avatarPath: 'assets/avatars/parents.png', txt: 'PARENT'),
-            Expanded(
-              child: Stack(
-                children: [
-                  Positioned(
-                    bottom: -50,
-                    right: -50,
-                    child: CircleAvatar(
-                      radius: 100,
-                      backgroundColor: Color(0xFF00adcf),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Bnulogo(),
+                SizedBox(height: 30),
+                Text(
+                  "WHO",
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Color(0xFF00adcf),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  "ARE",
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Color(0xFF00adcf),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  "YOU?",
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Color(0xFF00adcf),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomCard(
+                      ontapped: () {},
+                      avatarPath: 'assets/avatars/parents.png',
+                      txt: 'PARENT',
                     ),
-                  ),
-                  Positioned(
-                    bottom: 60,
-                    left: 10,
-                    child: CustomButton(txt: "CONTINUE", onPressed: () {}),
-                  ),
-                ],
-              ),
+
+                    CustomCard(
+                      ontapped: () {},
+                      avatarPath: 'assets/avatars/child.png',
+                      txt: 'CHILD',
+                    ),
+                  ],
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+          Expanded(
+            child: Stack(
+              children: [
+                Positioned(
+                  bottom: -50,
+                  right: -50,
+                  child: CircleAvatar(
+                    radius: 100,
+                    backgroundColor: Color(0xFF00adcf),
+                  ),
+                ),
+                Positioned(
+                  bottom: 60,
+                  left: 10,
+                  child: CustomButton(txt: "CONTINUE", onPressed: () {}),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
